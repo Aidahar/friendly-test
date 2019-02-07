@@ -11,6 +11,7 @@ class Test
 
     @score = 0
     @question_number = 0
+    @number = 1
   end
 
   def finished?
@@ -18,7 +19,7 @@ class Test
   end
 
   def ask_questions
-    puts "#{@questions[@question_number]}"
+    puts "#{@number}. #{@questions[@question_number]}"
 
     user_input = nil
     until user_input == 1 || user_input == 2 || user_input == 3
@@ -32,6 +33,7 @@ class Test
       @score += 1
     end
     @question_number +=1
+    @number +=1
   end
 
   def score
