@@ -10,7 +10,7 @@ ctrl + shift + T
 ```
 Введите в командной строке:
 ```
-ruby friendly.rb
+ruby main.rb
 ```
 
 
