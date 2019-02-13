@@ -1,14 +1,12 @@
 class Test
+  attr_reader :score
 
   def initialize(quest_path)
     unless File.exists?(quest_path)
       abort "Файл с вопросами не найден."
     end
 
-    file = File.new(quest_path, "r:UTF-8")
-    @questions = file.readlines
-    file.close
-
+    @questions = IO.readlines(quest_path, sep=$/)
     @score = 0
     @question_number = 0
     @number = 1
@@ -27,16 +25,9 @@ class Test
       user_input = gets.to_i
     end
 
-    if user_input == 1
-      @score += 2
-    elsif user_input == 3
-      @score += 1
-    end
+    @score += 2 if user_input == 1
+    @score += 1 if user_input == 3
     @question_number +=1
     @number +=1
-  end
-
-  def score
-    return @score
   end
 end
