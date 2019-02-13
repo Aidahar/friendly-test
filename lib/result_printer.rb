@@ -1,31 +1,21 @@
 class ResultPrinter
   def initialize(result_path)
-    if File.exist?(result_path)
-      file = File.new(result_path, 'r:UTF-8')
-      @answer = file.readlines
-      file.close
-    else
+    unless File.exist?(result_path)
       puts "Файл не найден"
     end
+    @answer = IO.readlines(result_path, sep=$/)
   end
 
   def result_print(test)
-    puts
-    puts
-    puts "Результат теста (всего баллов - #{test.score}):"
+    puts "\n\nРезультат теста (всего баллов - #{test.score}):"
 
-    if test.score >= 30
-      puts @answer[0]
-    elsif test.score >= 25
-      puts @answer[1]
-    elsif test.score >= 19
-      puts @answer[2]
-    elsif test.score >= 14
-      puts @answer[3]
-    elsif test.score >= 9
-      puts @answer[4]
-    elsif test.score >= 4
-      puts @answer[5]
+    case test.score
+    when test.score >= 30 then puts @answer[0]
+    when test.score >= 25 then puts @answer[1]
+    when test.score >= 19 then puts @answer[2]
+    when test.score >= 14 then puts @answer[3]
+    when test.score >= 9  then puts @answer[4]
+    when test.score >= 4  then puts @answer[5]
     else
       puts @answer[6]
     end
