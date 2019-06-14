@@ -4,6 +4,8 @@
 
 [Ссылка на сайт с тестом](https://psylist.net/praktikum/00003.htm)
 
+Скачать репозиторий командой git-clone https://github.com/Aidahar/friendly-test.git
+
 Чтобы запустить программу, запустите терминал командой:
 ```
 ctrl + shift + T
@@ -12,6 +14,3 @@ ctrl + shift + T
 ```
 ruby main.rb
 ```
-
-
-
